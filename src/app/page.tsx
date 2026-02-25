@@ -85,12 +85,6 @@ export default async function Home({ searchParams }: HomeProps) {
               Jobsly
             </h1>
           </div>
-
-          <Link href="/post">
-            <button className="cursor-pointer bg-indigo-600 text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-indigo-500 transition shadow-sm">
-              Post a Job
-            </button>
-          </Link>
         </div>
       </nav>
 
