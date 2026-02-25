@@ -1,4 +1,4 @@
-import { supabase } from './supabase';
+import { supabaseAdmin as supabase } from './supabaseServer';
 
 function cleanTags(tags) {
   if (!Array.isArray(tags)) return ['Remote'];
