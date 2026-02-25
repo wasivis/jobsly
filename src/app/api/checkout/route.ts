@@ -19,15 +19,15 @@ export async function POST(req: Request) {
               name: `Job Post: ${jobTitle}`,
               description: '30-day featured listing on Jobsly',
             },
-            unit_amount: 4900, // $49.00
+            unit_amount: 2900, // $29.00
           },
           quantity: 1,
         },
       ],
       mode: 'payment',
       // We pass the jobId to the success URL so we can identify it later
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}&jobId=${jobId}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/post`,
+      success_url: `${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}/success?session_id={CHECKOUT_SESSION_ID}&jobId=${jobId}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}/post`,
     });
 
     return NextResponse.json({ sessionId: session.id, url: session.url });
